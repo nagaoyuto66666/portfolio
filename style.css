@@ -1,0 +1,234 @@
+body{
+    font-family: "Hiragino Kaku Gothic ProN";
+    margin:0;
+    display: none;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+
+li{
+    list-style:none;
+}
+
+header {
+  height:80px;
+  width:100%;
+  margin:0 auto;
+  background-color:#AAAAAA;
+}
+
+.header-logo{
+    font-family:"ＭＳ 明朝",serif;
+    font-size:40px;
+    color:black;
+    float:left;
+    padding:10px 30px;
+    margin:0px 0px 0px 130px;
+}
+
+.header-list a{
+    display:block;
+}
+
+.header-list{
+    list-style:none;
+    padding:20px 10px 110px 20px;
+}
+    
+.header-list li{
+    width:100%;
+    text-align:center;
+    float: left;
+    height: 60px;
+    line-height: 50px;
+    margin-right: 20px;
+    padding:0px 0px 0px 0px;
+    font-family:"ＭＳ 明朝",serif;
+}
+
+.header-list li:hover{
+    background-color:#BC8F8F;
+    border-radius: 90px;
+    opacity: 0.6;
+}
+
+.header-list li a {
+  text-decoration: none;
+  color:black;
+  font-weight: bold;
+  padding: 0px ;
+  
+}
+
+#text{
+    padding-top:50px;
+}
+
+
+.btn{
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px 80px;
+  background-color: #5dca88;
+  box-shadow: 0px 5px #279C56;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.btn:active{
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+}
+
+
+/*メニュー部分*/
+#ham-menu {
+    background-color: #fff; /*メニュー背景色*/
+    box-sizing: border-box;
+    height: 40%;
+    padding: 10px 40px; /*メニュー内部上下左右余白*/
+    position: fixed;
+    right: -300px; /*メニュー横幅①と合わせる*/
+    top: 0;
+    transition: transform 0.3s linear 0s; /*0.3s は変化するのにかかる時間*/
+    width:300px; /*メニュー横幅①*/
+    z-index: 1000;
+}
+
+/*メニューアイコン部分は疑似要素で*/
+#ham-menu::before {
+    background-color: #fff; /*ボタン部分背景色*/
+    border-radius: 0 0 0 10px; /*左下角丸*/
+    color: #333; /*アイコン（フォント）色*/
+    content: "≡"; /*メニューアイコン*/
+    display: block;
+    font-size: 50px; /*アイコン（フォント）サイズ*/
+    height: 50px;
+    line-height: 50px; /*縦位置中央化*/
+    position: absolute;
+    right: 100%;
+    text-align: center;
+    top: 0;
+    width: 50px;
+}
+
+/*透過背景部分*/
+#menu-background {
+    background-color: #333; /*黒背景部分背景色*/
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 0.3s linear 0s; /*0.3s は変化するのにかかる時間*/
+    width: 100%;
+    z-index: -1;
+}
+
+/*hover 時の処理*/
+#ham-menu:hover {
+    transform: translate(-300px); /*メニュー横幅①と合わせる*/
+    
+}
+
+#ham-menu:hover + #menu-background {
+    opacity: 0.5; /*黒背景部分透過度*/
+    z-index: 999;
+}
+
+main{
+    height:890px;
+    text-align:center;
+    margin: 0 auto;
+}
+
+.container img{
+    width:100%;
+    height:560px;
+}
+
+
+
+
+input,textarea{width:400px; margin-top:5px; margin-bottom:30px; padding:20px; font-size:20px;
+                border:1px solid #dee7ec;}
+
+.contact-submit{background-color:#dee7ec; color:#889eab;}
+
+footer{
+    height:100px;
+    background-color:#AAAAAA;
+    margin:0;
+}
+
+.follow-me {
+  list-style: none;
+  margin: 0 0 -8px;
+  overflow: hidden;
+  padding: 0;
+}
+.follow-me li {
+  float: right;
+  margin: 0 8px 8px 0;
+  padding: 12px 1px 10px 1px;
+}
+.follow-me li a::before {
+  background-color: #eee;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #333;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 16px;
+  height: 44px; 
+  line-height: 44px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  text-align: center;
+  width: 44px; 
+}
+.follow-me li a:hover::before {
+  background-color: #333;
+  color: #fff;
+}
+
+.follow-me li a[href*="facebook.com"]::before       { content: "\f09a"; }
+.follow-me li a[href*="plus.google.com"]::before    { content: "\f0d5"; }
+.follow-me li a[href*="instagram.com"]::before      { content: "\f16d"; }
+.follow-me li a[href*="twitter.com"]::before        { content: "\f099"; }
+.follow-me li a[href*="youtube.com"]::before        { content: "\f16a"; }
+.follow-me li a[href$="/feed"]::before              { content: "\f09e"; }
+
+@media(max-width:800px){
+    header{
+        width:100%;
+    }
+    main{
+        width:100%;
+
+    }
+    footer{
+        text-align:center;
+    }
+}
+
+@media(max-width:500px){
+     header{
+         width:100%;}
+    
+    main{
+        width:80%;
+    }
+    
+    footer{
+        text-align:center;
+    }   
+}
+
